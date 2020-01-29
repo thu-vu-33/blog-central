@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
+import oauth from './containers/Login/reducer';
 
-import message from './containers/ExampleContainer/reducer';
-
-const rootReducer = combineReducers({ message });
+const rootReducer = combineReducers({ oauth });
 
 export default rootReducer;
