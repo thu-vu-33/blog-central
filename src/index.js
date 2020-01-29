@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import 'materialize-css';
+import 'materialize-css/dist/css/materialize.min.css';
+import './styles/index.scss'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Routes from './routes';
+
+ReactDOM.render(<Routes />, document.getElementById('root'));
