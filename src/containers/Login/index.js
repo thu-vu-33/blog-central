@@ -72,12 +72,12 @@ class SocialAuth extends React.Component {
               buttonText="Signin with Google"
               onSuccess={this.responseGoogle}
               onFailure={this.toaster}
+              autoLoad={false}
               icon={<img src={google} alt="Sign up with google" className="icon" />}
             />
             <FacebookLogin
               cssClass="waves-effect waves-light btn-flat btn--default m-b--15  btn--block"
               appId={config.FACEBOOK_APP_ID}
-              autoLoad={false}
               isDisabled={false}
               textButton="Signin with Facebook"
               fields="name,email,picture"
