@@ -18,7 +18,7 @@ class SignUp extends React.Component {
           <div className="card card--auth">
             {register.isFetching ? <InlineLoader /> : ''}
             <div className="card-content">
-              <span className="card-title center-align text-primary brand">Authors' Haven</span>
+              <span className="card-title center-align text-primary brand">Blog Central</span>
               <Form
                 onClick={(user) => {
                   actions(user, history);

@@ -21,7 +21,8 @@ const Home = () => {
 
   return (
     <div>
-      <h3>{`Hello ${user ? user.user.username : ''} ,Welcome to authors Haven`}</h3>
+      <h3>{`Hello ${user ? user.user.username : ''}`}</h3>
+      <h3>Welcome to Blog Central</h3>
       {toaster()}
     </div>
   );
