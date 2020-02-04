@@ -63,5 +63,14 @@
     "coveralls": "^3.0.9",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!node_modules/",
+      "!src/index.js",
+      "!src/containers/Article/Create/index.js",
+      "!src/routes.js"
+    ]
   }
 }

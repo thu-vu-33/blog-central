@@ -8,6 +8,8 @@ const ROUTES = {
     createArticleUrl: '/articles/new',
     signinWithEmail: '/signin/email',
     verify: '/verify/:token',
+    getProfile: '/profile/:username',
+    updateProfile: '/edit/profile/:username',
   };
   
   export default ROUTES;
