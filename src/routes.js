@@ -18,6 +18,7 @@ import ResetPasssword from './containers/ResetPassword';
 import Home from './containers/Home';
 import ReadProfile from './containers/Profile/Read';
 import UpdateProfile from './containers/Profile/Update';
+import Articles from './containers/Articles';
 
 import ROUTES from './utils/routes';
 
@@ -44,12 +45,13 @@ export default () => (
         <Route exact path={ROUTES.login} component={SocialAuth} />
         <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
         <Route exact path={ROUTES.verify} component={ResetPasssword} />
-        <Route path={ROUTES.getArticleUrl} component={Read} />
+        <Route exact path={ROUTES.getArticleUrl} component={Read} />
         <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
         <Route exact path={ROUTES.signup} component={SignUp} />
         <Route exact path={ROUTES.signinWithEmail} component={Signin} />
-        <Route exact path={ROUTES.getProfile} component={ReadProfile} />
+        <PrivateRoute exact path={ROUTES.getProfile} component={ReadProfile} />
         <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
+        <Route exact path="/articles" component={Articles} />
         <Route component={NotFound} />
       </Switch>
     </Router>

@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<AuthorDetails /> renders  <AuthorDetails /> components  without small 1`] = `ShallowWrapper {}`;
+
 exports[`<AuthorDetails /> renders  <AuthorDetails /> components 1`] = `ShallowWrapper {}`;

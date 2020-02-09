@@ -8,7 +8,7 @@ import { fetchArticle } from './actions';
 import Header from '../../../components/Header';
 import NotFound from '../../../components/NotFound';
 import AuthorDetails from '../../../components/AuthorDetails';
-import ArticleDetailsLoader from '../../../components/Placeholders/ArticleDetailsLoader ';
+import ArticleDetailsLoader from '../../../components/Placehoders/ArticleDetailsLoader'
 
 class Read extends Component {
   componentDidMount() {

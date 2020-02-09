@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import SideBar from '.';
 import configStore from '../../store';
 
-describe('<Home />', () => {
+describe('<SideBar />', () => {
   it('renders without crushing', () => {
     const wrapper = shallow(
       <SideBar

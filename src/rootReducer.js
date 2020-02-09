@@ -8,11 +8,15 @@ import getProfile from './containers/Profile/Read/reducer';
 import editProfile from './containers/Profile/Update/reducer';
 import fetchArticle from './containers/Article/Read/reducer';
 import createArticle from './containers/Article/Create/reducer';
+import articles from './containers/Home/reducer';
+import trending from './containers/Sidebar/reducer';
 
 const rootReducer = combineReducers({
     oauth,
     createArticle,
     fetchArticle,
+    articles,
+    trending,
     signin,
     signup,
     forgotPassword,
