@@ -70,8 +70,14 @@
       "src/**/*.{js,jsx}",
       "!node_modules/",
       "!src/index.js",
+      "!src/registerServiceWorker.js"
       "!src/containers/Article/Create/index.js",
+      "!src/registerServiceWorker.js",
       "!src/routes.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "html"
     ]
   }
 }
