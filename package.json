@@ -73,10 +73,6 @@
       "!src/containers/Article/Create/index.js",
       "!src/registerServiceWorker.js",
       "!src/routes.js"
-    ],
-    "coverageReporters": [
-      "json",
-      "html"
     ]
   }
 }
