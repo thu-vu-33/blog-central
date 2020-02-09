@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SideBar from '.';
+import Articles from '.';
 import configStore from '../../store';
 
-describe('<Home />', () => {
+describe('<Articles />', () => {
   it('renders without crushing', () => {
     const wrapper = shallow(
-      <SideBar
+      <Articles
         store={configStore()}
         article={{ isFetching: false, errors: { error: '' } }}
         match={{ params: {} }}

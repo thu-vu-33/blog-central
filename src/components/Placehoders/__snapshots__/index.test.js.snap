@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleDetailsLoader /> renders  <ArticleCard /> components 1`] = `ShallowWrapper {}`;
+
+exports[`<ArticleDetailsLoader /> renders  <ArticleCardReverse /> components 1`] = `ShallowWrapper {}`;
+
+exports[`<ArticleDetailsLoader /> renders  <ArticleDetails /> components 1`] = `ShallowWrapper {}`;
+
+exports[`<ArticleDetailsLoader /> renders  <ArticleDetailsLoader /> components 1`] = `ShallowWrapper {}`;
+
+exports[`<ArticleDetailsLoader /> renders  <ArticleLoader /> components 1`] = `ShallowWrapper {}`;

@@ -2,6 +2,7 @@ const ROUTES = {
     home: '/',
     login: '/login',
     signin: '/signin',
+    articles: '/articles',
     resetPassword: '/reset/password',
     signup: '/signup',
     getArticleUrl: '/article/:id',
@@ -9,7 +10,8 @@ const ROUTES = {
     signinWithEmail: '/signin/email',
     verify: '/verify/:token',
     getProfile: '/profile/:username',
-    updateProfile: '/edit/profile/:username',
+    updateProfile: '/profile/:username/edit',
+    profile: '/profile',
   };
   
   export default ROUTES;
