@@ -15,6 +15,7 @@ import { facebookSignin, googleSignin } from './actions';
 
 import config from '../../config';
 import InlineLoader from '../../components/InlineLoader';
+import ROUTES from '../../utils/routes';
 
 
 class SocialAuth extends React.Component {
@@ -60,7 +61,7 @@ class SocialAuth extends React.Component {
           {errors && this.toaster()}
           <div className="card-content">
             <span className="card-title center-align text-primary brand m-b--30 m-t--15">Blog Central</span>
-            <Link to="/signin" className="waves-effect waves-light btn-flat btn--default m-b--15  btn--block">
+            <Link to={ROUTES.signinWithEmail} className="waves-effect waves-light btn-flat btn--default m-b--15  btn--block">
               <img src={mail} alt="Sign up with email" className="icon" />
                   Sign in with email
             </Link>

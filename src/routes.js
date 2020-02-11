@@ -19,7 +19,7 @@ import Home from './containers/Home';
 import ReadProfile from './containers/Profile/Read';
 import UpdateProfile from './containers/Profile/Update';
 import Articles from './containers/Articles';
-
+import Scroll from './components/Scroll';
 import ROUTES from './utils/routes';
 
 const store = configStore();
@@ -40,20 +40,22 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 export default () => (
   <Provider store={store}>
     <Router>
-      <Switch>
-        <Route exact path={ROUTES.home} component={Home} />
-        <Route exact path={ROUTES.login} component={SocialAuth} />
-        <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
-        <Route exact path={ROUTES.verify} component={ResetPasssword} />
-        <Route exact path={ROUTES.getArticleUrl} component={Read} />
-        <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
-        <Route exact path={ROUTES.signup} component={SignUp} />
-        <Route exact path={ROUTES.signinWithEmail} component={Signin} />
-        <PrivateRoute exact path={ROUTES.getProfile} component={ReadProfile} />
-        <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
-        <Route exact path="/articles" component={Articles} />
-        <Route component={NotFound} />
-      </Switch>
+    <Scroll>
+        <Switch>
+          <Route exact path={ROUTES.home} component={Home} />
+          <Route exact path={ROUTES.getArticleUrl} component={Read} />
+          <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
+          <Route exact path={ROUTES.signup} component={SignUp} />
+          <Route exact path={ROUTES.signin} component={SocialAuth} />
+          <Route exact path={ROUTES.signinWithEmail} component={Signin} />
+          <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
+          <Route exact path={ROUTES.verify} component={ResetPasssword} />
+          <PrivateRoute exact path={ROUTES.getProfile} component={ReadProfile} />
+          <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
+          <Route exact path={ROUTES.articles} component={Articles} />
+          <Route component={NotFound} />
+        </Switch>
+      </Scroll>
     </Router>
   </Provider>
 );
