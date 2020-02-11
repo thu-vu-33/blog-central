@@ -62,7 +62,15 @@ class Header extends React.Component {
           </a>
         ) : (
           <React.Fragment>
-            <NavLink to={ROUTES.login} className="waves-effect waves-light btn btn--rounded">Signin</NavLink>
+            <li>
+              <NavLink to={ROUTES.signin} className="black-text">Sign in</NavLink>
+            </li>
+            <li>
+              <NavLink to={ROUTES.signup} className="black-text">Sign up</NavLink>
+            </li>
+            <li>
+              <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">What's your story</NavLink>
+            </li>
           </React.Fragment>
 
         )
