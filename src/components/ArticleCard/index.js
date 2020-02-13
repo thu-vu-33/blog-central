@@ -18,7 +18,7 @@ const Articles = ({ article, index }) => {
 
   return (
     <div className="card horizontal">
-      {index % 2 === 0 && imageComponent }
+      {index % 2 === 0 && imageComponent}
       <div className="card-stacked">
         <div className="card-content">
           <Link to={`/article/${slug}`} className="black-text">
@@ -35,18 +35,16 @@ const Articles = ({ article, index }) => {
         </div>
         <div className="card-action card--reactions">
           <div className="stats">
-            <span className="icon-stats">
-              <img src={likes} alt="likes" />
-              {likes_count}
-            </span>
-            <span className="icon-stats">
-              { average_rating }
-            </span>
+          <div className="icon---default">
+              <img src={likes} alt="thumbs-up" className="p-r--5" />
+              <span className="text--small">{likes_count}</span>
+            </div>
+            <span className="icon-stats">{average_rating}</span>
           </div>
 
         </div>
       </div>
-      {index % 2 === 1 && imageComponent }
+      {index % 2 === 1 && imageComponent}
     </div>
   );
 };

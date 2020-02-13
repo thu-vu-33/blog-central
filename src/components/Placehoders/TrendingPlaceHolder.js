@@ -6,8 +6,8 @@ const TrendingPlaceHolder = props => (
     height={60}
     width={250}
     speed={1.5}
-    primaryColor="#dfdfdf"
-    secondaryColor="#ffffff"
+    primarycolor="#dfdfdf"
+    secondarycolor="#ffffff"
     {...props}
   >
     <rect x="4" y="3.2" rx="0" ry="0" width="97.3" height="57.339999999999996" />

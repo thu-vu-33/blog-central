@@ -14,12 +14,16 @@ class Header extends React.Component {
     M.Dropdown.init(el);
   }
 
+  logout = () => {
+    localStorage.removeItem('user');
+  }
+
   renderDropDown = user => (
     <li>
       { user && (
         <React.Fragment>
           <a className="dropdown-trigger black-text" href="!#" data-target="profile">
-          <i class="icon material-icons">person</i>
+          <i className="icon material-icons">person</i>
           </a>
           <ul id="profile" className="dropdown-content">
             <li>
@@ -37,6 +41,10 @@ class Header extends React.Component {
             <li>
               <a href="#!">Favorites</a>
             </li>
+            <li className="divider" tabIndex="-1" />
+            <li>
+              <NavLink to={`${ROUTES.home}`} onClick={this.logout}>Logout</NavLink>
+            </li>
           </ul>
         </React.Fragment>)
         }
@@ -53,7 +61,7 @@ class Header extends React.Component {
         </NavLink>
 
       </li>
-      <li>
+      <ul>
         {user ? (
           <a href="#!" className="black-text" id="search">
             <div>
@@ -75,7 +83,7 @@ class Header extends React.Component {
 
         )
     }
-      </li>
+      </ul>
     </React.Fragment>
   )
 

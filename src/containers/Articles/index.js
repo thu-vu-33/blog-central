@@ -94,15 +94,13 @@ class Articles extends Component {
           <Header />
           <div className="container-fluid maxWidth1032">
             {this.renderStories()}
-            {payload
-            && (
-            <Paginator
-              activePage={this.state.activePage}
-              total={payload.count}
-              onClick={this.handlePageChange}
-            />
-            )
-          }
+            {payload && (
+              <Paginator
+                activePage={this.state.activePage}
+                total={payload.count}
+                onClick={this.handlePageChange}
+              />
+            )}
           </div>
         </React.Fragment>
       </div>
@@ -135,4 +133,7 @@ const mapDispatchToProps = dispatch => bindActionCreators(
   dispatch,
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Articles);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Articles);
