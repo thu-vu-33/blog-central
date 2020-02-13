@@ -14,7 +14,7 @@ const Trending = ({ article }) => {
         </div>
         <div className="trending__article--body">
           <Link to={`/article/${article.slug}`} className="black-text"><p className="article__title truncate">{article.title}</p></Link>
-          <Link to={`/article/${article.slug}`} className="black-text"><p className="article__info">{`${article.preview.substring(1, 50)}...`}</p></Link>
+          <Link to={`/article/${article.slug}`} className="black-text"><p className="article__info truncate">{`${article.preview}...`}</p></Link>
         </div>
     </div>
     </div>
