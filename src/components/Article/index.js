@@ -7,11 +7,11 @@ import heart from '../../assets/icons/heart.svg';
 
 
 const Article = ({
-  title, author, image, preview, date, slug, likesCount,
+  title, author, image, preview, date, slug, likesCount, readtime,
 }) => (
   <div className="col m11 s12 preview">
     <div className="row author">
-      <AuthorDetails user={author} date={date} small />
+      <AuthorDetails user={author} date={date} readtime={readtime} small />
     </div>
     {image && (
       <Link to={`article/${slug}`} className="black-text">
@@ -46,7 +46,7 @@ const Article = ({
 
 
 Article.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   image: PropTypes.string.isRequired,
   preview: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -54,7 +54,8 @@ Article.propTypes = {
   author: PropTypes.shape({
     username: PropTypes.string.isRequired,
   }).isRequired,
-  likesCount: PropTypes.string.isRequired,
+  likesCount: PropTypes.string,
+  readtime: PropTypes.number,
 };
 
 export default Article;

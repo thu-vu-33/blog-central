@@ -23,13 +23,12 @@ import Scroll from './components/Scroll';
 import ROUTES from './utils/routes';
 
 const store = configStore();
-const user = getCurrentUser();
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
-    render={props => (user ? (
-      <Component {...props} user={user} />
+    render={props => (getCurrentUser() ? (
+      <Component {...props} user={getCurrentUser()} />
     ) : (
       <Redirect to={{ pathname: ROUTES.signin, state: { from: props.location } }} />
     ))

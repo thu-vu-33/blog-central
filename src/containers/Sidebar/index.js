@@ -66,6 +66,9 @@ class SideBar extends Component {
         </div>
 
         <div className="divider" />
+        <div className="trending__article">
+          <div className="title--md">What's hot</div>
+        </div>
         {isFetching || !success ? this.renderTrendingPlaceholder() : this.renderArticles() }
         <div className="divider" />
 
@@ -81,7 +84,7 @@ class SideBar extends Component {
 }
 
 SideBar.propTypes = {
-  page: PropTypes.string.isRequired,
+  page: PropTypes.string,
   articles: PropTypes.shape({
     isFetching: PropTypes.bool.isRequired,
     success: PropTypes.bool.isRequired,

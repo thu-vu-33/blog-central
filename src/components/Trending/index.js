@@ -6,9 +6,6 @@ const Trending = ({ article }) => {
     return (
     <div className="trending p-b--10">
       <div className="trending__article">
-        <div className="title--md">Trending articles</div>
-      </div>
-      <div className="trending__article">
         <div className="trending__article--img">
           <img src={article.image} alt="" className="responsive-img" />
         </div>
