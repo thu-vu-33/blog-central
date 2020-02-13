@@ -7,8 +7,8 @@ const ArticleCardHolderReverse = props => (
     height={100}
     width={400}
     speed={1.5}
-    primaryColor="#dfdfdf"
-    secondaryColor="#ffffff"
+    primarycolor="#dfdfdf"
+    secondarycolor="#ffffff"
     {...props}
   >
     <rect x="6" y="15" rx="5" ry="5" width="220" height="4.6" />

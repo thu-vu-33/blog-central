@@ -46,18 +46,15 @@ class SideBar extends Component {
     const featuredArticles = featured(results).filter(a => a !== false).slice(0, 3);
     return (
       <React.Fragment>
-        <Trending articles={featuredArticles} />
+        {featuredArticles.map((article, i) => {
+          return <Trending article={article} key={i} />;
+        })}
       </React.Fragment>
     );
   }
 
   renderTrendingPlaceholder = () => {
-    const loaders = [];
-    for (let index = 0; index < 3; index += 1) {
-      loaders.push(<TrendingPlaceHolder />);
-    }
-
-    return loaders;
+    return <TrendingPlaceHolder />;
   }
 
   render() {

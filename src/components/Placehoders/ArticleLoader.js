@@ -7,8 +7,8 @@ const ArticleLoader = props => (
     height={160}
     width={400}
     speed={1.5}
-    primaryColor="#dfdfdf"
-    secondaryColor="#ffffff"
+    primarycolor="#dfdfdf"
+    secondarycolor="#ffffff"
     {...props}
   >
     <circle cx="13.42635" cy="14.42635" r="10.42635" />
