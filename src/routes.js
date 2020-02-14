@@ -23,13 +23,12 @@ import Scroll from './components/Scroll';
 import ROUTES from './utils/routes';
 
 const store = configStore();
-const user = getCurrentUser();
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
-    render={props => (user ? (
-      <Component {...props} user={user} />
+    render={props => (getCurrentUser() ? (
+      <Component {...props} user={getCurrentUser()} />
     ) : (
       <Redirect to={{ pathname: ROUTES.signin, state: { from: props.location } }} />
     ))
@@ -52,7 +51,11 @@ export default () => (
           <Route exact path={ROUTES.verify} component={ResetPasssword} />
           <PrivateRoute exact path={ROUTES.getProfile} component={ReadProfile} />
           <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
-          <Route exact path={ROUTES.articles} component={Articles} />
+          <Route
+            exact
+            path={ROUTES.articles}
+            component={props => <Articles {...props} key={Math.random()} />}
+          />
           <Route component={NotFound} />
         </Switch>
       </Scroll>

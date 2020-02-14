@@ -13,7 +13,7 @@ import { PlaceholderBlockConfig } from 'Dante2/package/es/components/blocks/plac
 import createArticleAction from './actions';
 import UserInfo from '../../../components/UserInfo';
 import Header from '../../../components/Header';
-import editorstate from './editorstate';
+import editorstate from '../../../utils/editorstate';
 import config from '../../../config';
 import uploader from '../../../utils/uploader';
 
@@ -66,7 +66,7 @@ class Create extends Component {
 
     return (
       <React.Fragment>
-        <Header />
+        <Header {...this.props} />
         <div className="container m-t--30">
           <UserInfo
             onPublish={this.handlePublish}
