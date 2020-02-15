@@ -25,7 +25,7 @@ class Header extends React.Component {
           <a className="dropdown-trigger black-text" href="!#" data-target="profile">
           <i className="icon material-icons">person</i>
           </a>
-          <ul id="profile" className="dropdown-content">
+          <ul id="profile" className="dropdown-content  dropdown-content--nav">
             <li>
               <NavLink to={`${ROUTES.profile}/${user.username}`}>Profile</NavLink>
             </li>

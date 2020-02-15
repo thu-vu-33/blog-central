@@ -20,6 +20,7 @@ import ReadProfile from './containers/Profile/Read';
 import UpdateProfile from './containers/Profile/Update';
 import Articles from './containers/Articles';
 import Scroll from './components/Scroll';
+import UpdateArticle from './containers/Article/UpdateArticle';
 import ROUTES from './utils/routes';
 
 const store = configStore();
@@ -44,6 +45,7 @@ export default () => (
           <Route exact path={ROUTES.home} component={Home} />
           <Route exact path={ROUTES.getArticleUrl} component={Read} />
           <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
+          <PrivateRoute exact path={ROUTES.editArticleUrl} component={UpdateArticle} />
           <Route exact path={ROUTES.signup} component={SignUp} />
           <Route exact path={ROUTES.signin} component={SocialAuth} />
           <Route exact path={ROUTES.signinWithEmail} component={Signin} />
