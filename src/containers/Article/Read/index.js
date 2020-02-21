@@ -99,6 +99,8 @@ renderReaction = (id, src, count) => (
   <Reaction id={id} src={src} count={count} onClick={this.handleReaction} />
 );
 
+renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
+
   render() {
     const {
       isFetching, success, payload, errors, isRating,
@@ -132,6 +134,7 @@ renderReaction = (id, src, count) => (
                   <AuthorDetails
                     user={{ ...payload.article.author }}
                     date={payload.article.created_at}
+                    slug={payload.article.slug}
                     readtime={readtime}
                     averageRate={
                       payload.article.average_rating
@@ -151,6 +154,7 @@ renderReaction = (id, src, count) => (
               </React.Fragment>
             )}
           </div>
+          {payload.article && <div className="row">{ this.renderTags(payload.article.tagList) }</div>}
         </div>
       </React.Fragment>
     );

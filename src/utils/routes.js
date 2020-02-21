@@ -7,6 +7,7 @@ const ROUTES = {
     signup: '/signup',
     getArticleUrl: '/article/:id',
     createArticleUrl: '/articles/new',
+    editArticleUrl: '/article/:slug/edit',
     signinWithEmail: '/signin/email',
     verify: '/verify/:token',
     getProfile: '/profile/:username',

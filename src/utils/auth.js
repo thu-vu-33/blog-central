@@ -5,7 +5,7 @@ const getCurrentUser = () => {
     const { user } = JSON.parse(localStorage.getItem('user'));
     const currentTime = new Date() / 1000;
     if (jwtDecode(user.token).exp < currentTime) {
-      return null;
+      localStorage.removeItem('user')
     }
     return user;
   }
