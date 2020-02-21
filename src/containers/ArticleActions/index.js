@@ -47,9 +47,6 @@ class ArticleActions extends Component {
         </p>
 
         <ul id={slug} className="dropdown-content drop--small">
-          <li>
-            <Link to={`/article/${slug}`}>View</Link>
-          </li>
           <li className="divider" tabIndex="-1" />
           <li>
             <Link to={`/article/${slug}/edit`}>Edit</Link>

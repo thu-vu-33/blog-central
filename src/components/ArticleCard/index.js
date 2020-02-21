@@ -9,7 +9,7 @@ const Articles = ({ article, index }) => {
     preview, image, title, slug, likes_count, average_rating,
   } = article;
   const imageComponent = (
-    <div className="card-image">
+    <div className="card-image l4 m4 s12">
       <Link to={`/article/${slug}`}>
         <img alt="" src={image} className="responsive-img article-img" />
       </Link>
@@ -19,7 +19,7 @@ const Articles = ({ article, index }) => {
   return (
     <div className="card horizontal">
       {index % 2 === 0 && imageComponent}
-      <div className="card-stacked">
+      <div className="card-stacked l8 m8 s12">
         <div className="card-content">
           <Link to={`/article/${slug}`} className="black-text">
             <h5 className="truncate">{title}</h5>

@@ -60,7 +60,7 @@ class SideBar extends Component {
   render() {
     const { isFetching, success } = this.props.articles;
     return (
-      <aside className="col m3 articles__sidebar">
+      <aside className="col l3 m12 s12 articles__sidebar">
         <div className="network center p-b--40">
           {this.props.page === 'home' ? <Network /> : <Tags /> }
         </div>

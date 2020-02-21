@@ -1,7 +1,7 @@
-import StarRatingComponent from 'react-star-rating-component';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import StarRatingComponent from 'react-star-rating-component';
 
 import capitalize from '../../utils/capitalize';
 import getCurrentUser from '../../utils/auth';
@@ -23,10 +23,10 @@ const AuthorDetails = ({
       <Link to="/">
         <div className="author__avatar">
           <img
-              src={user.image}
-              alt={user.username}
-              className={`responsive-img circle ${small ? 'avatar--small' : 'avatar--small'}`}
-            />
+            src={user.image}
+            alt={user.username}
+            className={`responsive-img circle ${small ? 'avatar--small' : 'avatar--small'}`}
+          />
         </div>
       </Link>
       <div className={`author_details ${small && 'author--small'}`}>
@@ -37,12 +37,13 @@ const AuthorDetails = ({
             </Link>
           </div>
           {!small
-            && !getCurrentUser().username && (
+            && !getCurrentUser() && (
               <a className="btn-flat btn-flat--primary" href="#!">
                 Follow
               </a>
           )}
         </div>
+
         <div className="article__highlights">
           {new Date(date).toLocaleDateString(undefined, {
             month: 'short',
@@ -50,9 +51,8 @@ const AuthorDetails = ({
             year: 'numeric',
           })}
           {small ? renderTime(readtime) : renderTime(readtime)}
-
           {!small && (
-          <React.Fragment>
+            <React.Fragment>
               <span className="p-r--10 p-l--10">
                 <StarRatingComponent
                   name="rate1"
@@ -66,7 +66,6 @@ const AuthorDetails = ({
               <p>{averageRate}</p>
             </React.Fragment>
           )}
-
         </div>
       </div>
     </div>
@@ -75,21 +74,14 @@ const AuthorDetails = ({
       <div className="m-t--15">
         {getCurrentUser()
           && user.username === getCurrentUser().username
-          && small && <ArticleActions slug={slug} />}
-        {getCurrentUser()
-          && user.username === getCurrentUser().username
-          && !small && (
-            <Link to={`${slug}/edit`}>
-              <button type="button" className="btn-flat btn-flat--primary">
-                Edit Article
-              </button>
-            </Link>
-        )}
+          && <ArticleActions slug={slug} />}
       </div>
     </div>
   </div>
 );
+
 export default AuthorDetails;
+
 AuthorDetails.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string.isRequired,

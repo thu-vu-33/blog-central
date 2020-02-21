@@ -6,6 +6,7 @@ import M from 'materialize-css';
 
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
+import InlineLoader from '../InlineLoader';
 
 
 class Header extends React.Component {
@@ -89,25 +90,29 @@ class Header extends React.Component {
 
   render() {
     const user = getCurrentUser();
+    const { loading } = this.props;
     return (
-      <header>
-        <nav className="white">
-          <div className="nav-wrapper maxWidth1032">
-            <NavLink to="/" className="flow-text black-text">
-                Blog Central
-            </NavLink>
+      <React.Fragment>
+        <header>
+          <nav className="white">
+            <div className="nav-wrapper maxWidth1032">
+              <NavLink to="/" className="flow-text black-text">
+                  Blog Central
+              </NavLink>
 
-            <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
-              <li className="black-text hide search-input">
-                <input type="text" placeholder="Search..." className="search" />
-              </li>
-              {this.renderIcons(user)}
-              {this.renderDropDown(user)}
-            </ul>
+              <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
+                <li className="black-text hide search-input">
+                  <input type="text" placeholder="Search..." className="search" />
+                </li>
+                {this.renderIcons(user)}
+                {this.renderDropDown(user)}
+              </ul>
 
-          </div>
-        </nav>
-      </header>
+            </div>
+          </nav>
+        </header>
+        {loading && <InlineLoader />}
+      </React.Fragment>
     );
   }
 }
