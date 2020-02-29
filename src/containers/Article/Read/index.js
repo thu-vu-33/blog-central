@@ -19,6 +19,8 @@ import NotFound from '../../../components/NotFound';
 import api from '../../../utils/api';
 import getCurrentUser from '../../../utils/auth';
 import readTime from '../../../utils/readtime';
+import NewComment from '../../Comments/Create';
+import ReadComments from '../../Comments/Read';
 
 const user = getCurrentUser();
 
@@ -101,6 +103,19 @@ renderReaction = (id, src, count) => (
 
 renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
 
+renderComments = () => {
+  const user = getCurrentUser();
+  if (user) {
+    return (
+      <div>
+        <NewComment slug={this.props.match.params.id} />
+        <ReadComments slug={this.props.match.params.id} />
+      </div>
+    );
+  }
+  return null;
+}
+
   render() {
     const {
       isFetching, success, payload, errors, isRating,
@@ -121,7 +136,7 @@ renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
     }
     return (
       <React.Fragment>
-        <Header {...this.props} />
+        <Header />
 
         <div className="container m-t--30">
           <div className="row">
@@ -144,6 +159,7 @@ renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
                     onStarClick={this.onStarClick}
                   />
                   <Dante read_only content={data} />
+                  {this.renderComments()}
                   </div>
                 <div className="col s1">
                   <div className="reactions">
@@ -166,6 +182,7 @@ Read.propTypes = {
     isFetching: PropTypes.bool.isRequired,
     isRating: PropTypes.bool.isRequired,
     success: PropTypes.bool.isRequired,
+    failure: PropTypes.bool.isRequired,
     payload: PropTypes.object.isRequired,
     errors: PropTypes.object,
   }).isRequired,
@@ -176,6 +193,7 @@ Read.propTypes = {
   }).isRequired,
   like: PropTypes.func.isRequired,
   dislike: PropTypes.func.isRequired,
+  bookmark: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators(
