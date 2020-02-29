@@ -7,6 +7,7 @@ import capitalize from '../../utils/capitalize';
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
 import ArticleActions from '../../containers/ArticleActions';
+import config from '../../config';
 
 const renderTime = readtime => (
   <React.Fragment>
@@ -23,7 +24,7 @@ const AuthorDetails = ({
       <Link to="/">
         <div className="author__avatar">
           <img
-            src={user.image}
+            src={user.image ? user.image : config.DEFAULT_USER_AVATAR}
             alt={user.username}
             className={`responsive-img circle ${small ? 'avatar--small' : 'avatar--small'}`}
           />

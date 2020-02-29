@@ -10,12 +10,16 @@ import fetchArticle from './containers/Article/Read/reducer';
 import createArticle from './containers/Article/Create/reducer';
 import articles from './containers/Home/reducer';
 import trending from './containers/Sidebar/reducer';
+import createComment from './containers/Comments/Create/reducer';
+import getComments from './containers/Comments/Read/reducer';
 
 const rootReducer = combineReducers({
     oauth,
     createArticle,
     fetchArticle,
     articles,
+    createComment,
+    getComments,
     trending,
     signin,
     signup,

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
@@ -32,15 +33,15 @@ class Header extends React.Component {
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
-              <NavLink to={`${ROUTES.createArticleUrl}`}>New Article</NavLink>
+              <NavLink to={`${ROUTES.createArticleUrl}`}>New story</NavLink>
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
-              <a href="#!">My articles</a>
+              <NavLink to={`${ROUTES.profile}/${user.username}#profile`}>My articles</NavLink>
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
-              <a href="#!">Favorites</a>
+              <NavLink to={`${ROUTES.profile}/${user.username}#bookmarks`}>Favorite</NavLink>
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
@@ -78,7 +79,7 @@ class Header extends React.Component {
               <NavLink to={ROUTES.signup} className="black-text">Sign up</NavLink>
             </li>
             <li>
-              <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">What's your story</NavLink>
+              <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">What's your story?</NavLink>
             </li>
           </React.Fragment>
 
@@ -116,5 +117,8 @@ class Header extends React.Component {
     );
   }
 }
+Header.propTypes = {
+  loading: PropTypes.bool,
+};
 
 export default Header;
