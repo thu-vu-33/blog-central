@@ -47,7 +47,9 @@ class Home extends Component {
         <div className="container-fluid maxWidth1032">
           <div className="row articles">
             <div className="col l8 m12 s12 articles__main">
-              <p className="flow-text m-b--30">Featured articles</p>
+              <header className="">
+                <span>Featured articles</span>
+              </header>
 
               {isFetching || !success ? this.renderPlaceholder() : this.renderArticles()}
             </div>

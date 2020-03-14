@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'bc-sans-serif-font';
+  font-style: normal;
+  src: url('./marat-sans.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'bc-sans-serif-font-bold';
+    font-style: normal;
+    src: url('./marat-sans-bold.woff') format('woff');
+  }
+
+@font-face {
+    font-family: 'bc-sans-serif-font-italic';
+    font-style: italic;
+    src: url('./marat-sans-italic.woff') format('woff');
+  }
+
+@font-face {
+    font-family: 'bc-sans-serif-font-light';
+    font-style: normal;
+    src: url('./marat-sans-light.woff') format('woff');
+  }
+
+@font-face {
+    font-family: 'noe';
+    font-style: italic;
+    src: url('./noe-display.woff') format('woff');
+  }
+
+@font-face {
+    font-family: 'bc-serif-font';
+    font-style: normal;
+    src: url('./charter-regular-webfont.woff') format('woff');
+  }

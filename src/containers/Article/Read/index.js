@@ -138,14 +138,14 @@ renderComments = () => {
       <React.Fragment>
         <Header />
 
-        <div className="container m-t--30">
+        <div className="container s12 maxWidth1032">
           <div className="row">
           {this.state.alert ? this.toaster() : ''}
             {(isFetching || !success) && !isRating ? (
               <ArticleDetailsLoader />
             ) : (
               <React.Fragment>
-                <div className="col s11">
+                <div className="col l11 s12">
                   <AuthorDetails
                     user={{ ...payload.article.author }}
                     date={payload.article.created_at}
@@ -161,7 +161,7 @@ renderComments = () => {
                   <Dante read_only content={data} />
                   {this.renderComments()}
                   </div>
-                <div className="col s1">
+                <div className="col l1 s1 hide-on-med-and-down">
                   <div className="reactions">
                     {this.renderReaction('like', thumbsUp, payload.article.likes_count)}
                     {this.renderReaction('dislike', thumbsDown, payload.article.dislikes_count)}

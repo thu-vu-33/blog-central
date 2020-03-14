@@ -9,6 +9,7 @@ const getCurrentUser = () => {
     }
     return user;
   }
+  localStorage.removeItem('user')
   return null;
 };
 

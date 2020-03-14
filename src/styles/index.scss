@@ -1,5 +1,7 @@
+
 // Variables should be the first because all other files are inheriting from them
 @import "utils/variables";
+@import "fonts/fonts";
 
 //IMPORT ALL THE OTHER FILES HERE
 @import "base/resets";

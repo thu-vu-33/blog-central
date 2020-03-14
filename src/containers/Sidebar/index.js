@@ -8,22 +8,11 @@ import featured from '../../utils/featured';
 import TrendingPlaceHolder from '../../components/Placehoders/TrendingPlaceHolder.js';
 
 
-const Network = () => (
-  <React.Fragment>
-    <img src="https://randomuser.me/api/portraits/med/women/2.jpg" alt="" className="small--avatar responsive-img" />
-    <img src="https://randomuser.me/api/portraits/med/men/1.jpg" alt="" className="small--avatar responsive-img" />
-    <img src="https://randomuser.me/api/portraits/med/women/5.jpg" alt="" className="small--avatar responsive-img" />
-
-    <p className="m-t--15 m-b--20">
-            Build your network in seconds
-    </p>
-
-    <a href="!#" className="waves-effect waves-light btn btn--rounded">Follow authors</a>
-  </React.Fragment>
-);
-
 const Tags = () => (
   <React.Fragment>
+    <div className="trending__article">
+      <h2 className="ui-h2">Hot topics</h2>
+    </div>
     <div className="row">
       <div className="chip">Hyper Loop</div>
       <div className="chip">Quantum computing</div>
@@ -47,7 +36,7 @@ class SideBar extends Component {
     return (
       <React.Fragment>
         {featuredArticles.map((article, i) => {
-          return <Trending article={article} key={i} />;
+          return <Trending article={article} index={i} key={i} />;
         })}
       </React.Fragment>
     );
@@ -60,21 +49,21 @@ class SideBar extends Component {
   render() {
     const { isFetching, success } = this.props.articles;
     return (
-      <aside className="col l3 m12 s12 articles__sidebar">
-        <div className="network center p-b--40">
-          {this.props.page === 'home' ? <Network /> : <Tags /> }
+      <aside className="col l4 m12 s12 articles__sidebar">
+        <div className="network center">
+           <Tags />
         </div>
 
         <div className="divider" />
         <div className="trending__article">
-          <div className="title--md">What's hot</div>
+          <h2 className="ui-h2">Popular:</h2>
         </div>
         {isFetching || !success ? this.renderTrendingPlaceholder() : this.renderArticles() }
         <div className="divider" />
 
         <div className="trending p-b--10">
           <div className="trending__article">
-            <div className="title--md">Recommended for you </div>
+            <h2 className="ui-h2">Recommended for you: </h2>
           </div>
         </div>
         <div className="divider" />

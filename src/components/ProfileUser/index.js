@@ -20,7 +20,7 @@ const ProfileUser = ({
 
       <div className="m-b--15">
         <a href="#following" className="m-r--15" onClick={listFollowing}>
-          {data.following}
+          {data.follows}
           {' '}
 Following
         </a>
@@ -32,7 +32,7 @@ Following
       </div>
 
       <div className="m-b--15">
-        {currentUser.email === data.email ? (
+        {currentUser && currentUser.email === data.email ? (
           <Link
             to={`/profile/${data.username}/edit`}
             className="waves-effect waves-light btn btn--rounded"
