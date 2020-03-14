@@ -60,7 +60,7 @@ class SocialAuth extends React.Component {
           {error && this.toaster()}
           {errors && this.toaster()}
           <div className="card-content">
-            <span className="card-title center-align text-primary brand m-b--30 m-t--15">Blog Central</span>
+            <span className="card-title center-align nav-brand-logo text-primary m-b--30 m-t--15">Blog Central</span>
             <Link to={ROUTES.signinWithEmail} className="waves-effect waves-light btn-flat btn--default m-b--15  btn--block">
               <img src={mail} alt="Sign up with email" className="icon" />
                   Sign in with email

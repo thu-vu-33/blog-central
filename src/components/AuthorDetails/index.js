@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import StarRatingComponent from 'react-star-rating-component';
+import Avatar from "react-avatar";
 
 import capitalize from '../../utils/capitalize';
 import getCurrentUser from '../../utils/auth';
@@ -22,18 +23,18 @@ const AuthorDetails = ({
   <div className="row author__panel p-t--20">
     <div className="author col m10">
       <Link to="/">
-        <div className="author__avatar">
-          <img
-            src={user.image ? user.image : config.DEFAULT_USER_AVATAR}
-            alt={user.username}
-            className={`responsive-img circle ${small ? 'avatar--small' : 'avatar--small'}`}
-          />
-        </div>
+        <Avatar
+          name={user.username}
+          size="40"
+          textSizeRatio="1.75"
+          className={`responsive-img circle ${small ? 'avatar--small' : 'avatar--small'}`}
+          src={user.image ? user.image : config.DEFAULT_USER_AVATAR}
+        />
       </Link>
-      <div className={`author_details ${small && 'author--small'}`}>
+      <div className={`author__details ${small && 'author--small'}`}>
         <div className="author__info">
           <div className="author-name">
-            <Link className="text--small" to={`${ROUTES.profile}/${user.username}`}>
+            <Link to={`${ROUTES.profile}/${user.username}`}>
               {capitalize(user.username)}
             </Link>
           </div>
@@ -54,7 +55,7 @@ const AuthorDetails = ({
           {small ? renderTime(readtime) : renderTime(readtime)}
           {!small && (
             <React.Fragment>
-              <span className="p-r--10 p-l--10">
+              <span className="p-r--10 p-l--10 rating">
                 <StarRatingComponent
                   name="rate1"
                   starCount={5}

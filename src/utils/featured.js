@@ -1,6 +1,8 @@
 const filterFeatured = (article) => {
+  console.log(article);
+  
     const {
-      body, title, slug, average_rating, likes_count,
+      body, title, slug, average_rating, likes_count, created_at, author, updated_at,
     } = article;
     let b;
     try {
@@ -24,12 +26,15 @@ const filterFeatured = (article) => {
   
     return {
       preview: (
-        preview.text.substring(0, 1).toUpperCase() + preview.text.substring(1)).substring(0, 200),
+        preview.text.substring(0, 1).toUpperCase() + preview.text.substring(1)).substring(0, 100),
       image,
       title,
       slug,
       likes_count,
       average_rating,
+      created_at,
+      author,
+      updated_at,
     };
   };
   

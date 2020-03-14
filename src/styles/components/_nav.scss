@@ -1,3 +1,15 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand-logo {
+  font-family: noe;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1px !important;
+}
 .nav-icons {
   display: flex !important;
   align-items: center;

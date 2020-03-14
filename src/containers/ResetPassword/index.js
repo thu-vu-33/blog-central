@@ -85,7 +85,7 @@ class ResetPassword extends Component {
         <div className="col m4 s12 offset-m4 auth">
           <div className="card card--auth p-b--40">
             <div className="card-content">
-              <span className="card-title center-align text-primary  brand m-b--30 m-t--15">
+              <span className="card-title center-align text-primary  nav-brand-logo m-b--30 m-t--15">
                 Blog Central
               </span>
               <form onSubmit={this.handleSubmit}>

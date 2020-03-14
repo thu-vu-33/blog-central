@@ -1,10 +1,21 @@
 body {
-  background-color: $secondary-color;
+  background-color: #fff;
+  text-rendering: optimizeLegibility;
 }
 
 .maxWidth1032 {
   max-width: 1032px !important;
+  clear: both;
   margin: 0 auto;
+  padding: 0 1%;
+}
+
+.ui-h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  padding: 0;
+  margin: 1.0933333333rem 0 .656rem 0;
 }
 
 .text-primary {
@@ -15,10 +26,9 @@ body {
   background-color: #3d5a96 !important;
 }
 
-.line-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
+.grey-t {
+  letter-spacing: .5px !important;
+  color: rgba(0,0,0,.54) !important;
 }
 
 .brand {

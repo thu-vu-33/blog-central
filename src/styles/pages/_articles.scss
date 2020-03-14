@@ -2,11 +2,7 @@
   min-height: 100vh;
 
   &__main {
-    padding-top: 50px !important;
-  }
-  &__sidebar {
-    padding: 50px 0 !important;
-    border-left: 1px solid #ccc;
+    padding: 0 25px 25px 0 !important;
   }
   &__reveal {
     font-size: 15px;
@@ -16,6 +12,17 @@
     padding: 50px 60px 0 60px !important;
     font-size: 16px;
     line-height: 150%;
+  }
+}
+
+header {
+  margin-bottom: 25px;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  span {
+    font-size: 22px;
+    padding: 1.0933333333rem 0 .656rem 0;
   }
 }
 .small--avatar {
@@ -31,22 +38,25 @@
 .trending {
   &__article {
     display: flex;
-    padding: 10px 20px;
+    width: 100%;
+    padding: 10px 0 0 10px;
 
-    &--img {
-      padding-right: 20px;
-      max-width: 140px !important;
-      min-width: 140px !important;
+    &--index {
+      padding-top: 5px;
+      max-width: 30px !important;
+      min-width: 20px !important;
       max-height: 140px !important;
-      // min-height: 140px!important;
+      font-size: 34px;
+      color: rgba(0,0,0,.15);
     }
 
     &--body {
-      width: 60%;
       line-height: 20px;
-      padding-top: 10px;
       .article__title {
+        font-family: bc-sans-serif-font;
         font-weight: 700;
+        font-size: 18px;
+        width: 100%;
       }
       &--info {
         font-size: 10px;
@@ -63,8 +73,17 @@
 }
 
 .title--md {
-  font-weight: 700 !important;
+  font-weight: 500;
   font-size: 19px;
+}
+
+.DraftEditor-root {
+  letter-spacing: 0.01rem !important;
+  line-height: 30px !important;
+  font-size: 21px;
+  span {
+    font-family: bc-serif-font !important;
+  } 
 }
 
 .article {
@@ -80,6 +99,11 @@
 
     & > span {
       font-size: 30px;
+    }
+
+    & .rating {
+      position: relative;
+      top: 2px;
     }
   }
 
@@ -113,7 +137,7 @@
     }
 
     &--body {
-      line-height: 30px;
+      line-height: 20px;
     }
   }
 
@@ -149,10 +173,11 @@
   }
 }
 
+
 .reactions {
   display: flex;
   flex-direction: column;
-  margin-top: 250px;
+  top: 30vh;
   align-items: flex-end;
   position: fixed;
   margin-left: 50px;
@@ -176,6 +201,7 @@
 .author {
   display: flex;
   align-items: center;
+  padding: 0;
 
   &__avatar {
     margin-right: 15px;
@@ -188,6 +214,7 @@
   }
 
   &__details {
+    margin-left: 15px;
     display: flex;
     flex-direction: column;
   }
@@ -198,6 +225,7 @@
   }
 
   &-name {
+    font-size: 16px;
     margin-right: 10px;
   }
 
@@ -264,4 +292,67 @@
 
 .divider {
   opacity: 0.3;
+}
+
+h1 span {
+  font-size: 3.5rem;
+  font-weight: 600 !important;
+  line-height: 42px !important;
+  letter-spacing: 2px !important;
+}
+
+@media screen and (max-width: 1032px) {
+  .container {
+    width: 95%;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 span{
+    font-size: 3rem !important;
+  }
+
+  h2 span{
+    font-size: 2rem !important;
+  }
+
+  h3 span{
+    font-size: 1.5rem !important;
+  }
+
+  .DraftEditor-root {
+    letter-spacing: 0.01rem !important;
+    line-height: 25px !important;
+    font-size: 18px;
+    span {
+      font-family: bc-serif-font !important;
+    } 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .article__highlights {
+    font-size: 12px;
+  }
+  h1 span{
+    font-size: 2.5rem !important;
+  }
+
+  h2 span{
+    font-size: 2rem !important;
+  }
+
+  h3 span{
+    font-size: 1.5rem !important;
+  }
+
+  .DraftEditor-root {
+    letter-spacing: 0.01rem !important;
+    line-height: 25px !important;
+    font-size: 15px;
+    span {
+      font-family: bc-serif-font !important;
+    } 
+  }
 }

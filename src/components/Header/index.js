@@ -76,10 +76,7 @@ class Header extends React.Component {
               <NavLink to={ROUTES.signin} className="black-text">Sign in</NavLink>
             </li>
             <li>
-              <NavLink to={ROUTES.signup} className="black-text">Sign up</NavLink>
-            </li>
-            <li>
-              <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">What's your story?</NavLink>
+              <NavLink to={`${ROUTES.signup}`} className="waves-effect waves-light btn-small ">Get started</NavLink>
             </li>
           </React.Fragment>
 
@@ -97,8 +94,11 @@ class Header extends React.Component {
         <header>
           <nav className="white">
             <div className="nav-wrapper maxWidth1032">
-              <NavLink to="/" className="flow-text black-text">
+              <NavLink to="/" className="nav-brand-logo black-text hide-on-small-only">
                   Blog Central
+              </NavLink>
+              <NavLink to="/" className="nav-brand-logo black-text hide-on-med-and-up">
+                  Blog C.
               </NavLink>
 
               <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">

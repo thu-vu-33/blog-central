@@ -142,7 +142,7 @@ class Articles extends Component {
         <form onSubmit={this.handleSubmit}>
             <input
               type="text"
-              placeholder="Search Authors' Heven..."
+              placeholder="Search ..."
               className="search"
               onChange={this.handleChange}
             />

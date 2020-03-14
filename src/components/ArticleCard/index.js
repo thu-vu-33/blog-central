@@ -1,50 +1,57 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import likes from '../../assets/icons/thumbs-up.svg';
+import ROUTES from '../../utils/routes';
 
 
-const Articles = ({ article, index }) => {
+const Articles = ({ article}) => {
   const {
-    preview, image, title, slug, likes_count, average_rating,
+    preview, image, title, slug, average_rating, created_at,
   } = article;
-  const imageComponent = (
-    <div className="card-image l4 m4 s12">
-      <Link to={`/article/${slug}`}>
-        <img alt="" src={image} className="responsive-img article-img" />
-      </Link>
-    </div>
-  );
+  const {username} = article.author
+  console.log(article);
+  
 
   return (
-    <div className="card horizontal">
-      {index % 2 === 0 && imageComponent}
-      <div className="card-stacked l8 m8 s12">
-        <div className="card-content">
+    <div className="custom-card">
+      <div className="col l9 m9 s12">
+        <div className="c-card-content">
           <Link to={`/article/${slug}`} className="black-text">
-            <h5 className="truncate">{title}</h5>
+            <h5 className="">{title}</h5>
           </Link>
-          <p>
-            <Link to={`/article/${slug}`} className="black-text">
+          <p className="description">
+            <Link to={`/article/${slug}`} className="grey-t">
               {`${preview} ... `}
             </Link>
-            <Link to={`/article/${slug}`}>
-              <u>Read article</u>
-            </Link>
           </p>
-        </div>
-        <div className="card-action card--reactions">
-          <div className="stats">
-          <div className="icon---default">
-              <img src={likes} alt="thumbs-up" className="p-r--5" />
-              <span className="text--small">{likes_count}</span>
-            </div>
-            <span className="icon-stats">{average_rating}</span>
+          <div className="article-info">
+            <p>
+              <Link  id="author" to={`${ROUTES.profile}/${username}`}>
+                {username}
+              </Link>
+            </p>
+            <p className="grey-t">
+              {new Date(created_at).toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })}
+              &nbsp;&nbsp;&nbsp;
+              {
+                <React.Fragment>
+                  <span> &#9733;&nbsp; </span>
+                  <span>{average_rating ? average_rating : "0"}</span>
+                </React.Fragment>
+              }
+            </p>
           </div>
-
         </div>
       </div>
-      {index % 2 === 1 && imageComponent}
+      <div className=" c-card-image">
+        <Link to={`/article/${slug}`}>
+          <img alt="" src={image} className="" />
+        </Link>
+      </div>
     </div>
   );
 };
