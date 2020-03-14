@@ -6,6 +6,7 @@ const getCurrentUser = () => {
     const currentTime = new Date() / 1000;
     if (jwtDecode(user.token).exp < currentTime) {
       localStorage.removeItem('user')
+      return null
     }
     return user;
   }
