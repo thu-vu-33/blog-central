@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import StarRatingComponent from 'react-star-rating-component';
 import Avatar from "react-avatar";
 
 import capitalize from '../../utils/capitalize';
@@ -21,7 +20,7 @@ const AuthorDetails = ({
   user, date, small, averageRate, readtime, onStarClick, slug,
 }) => (
   <div className="row author__panel p-t--20">
-    <div className="author col m10">
+    <div className="author col s10 m10">
       <Link to="/">
         <Avatar
           name={user.username}
@@ -53,26 +52,11 @@ const AuthorDetails = ({
             year: 'numeric',
           })}
           {small ? renderTime(readtime) : renderTime(readtime)}
-          {!small && (
-            <React.Fragment>
-              <span className="p-r--10 p-l--10 rating">
-                <StarRatingComponent
-                  name="rate1"
-                  starCount={5}
-                  value={averageRate}
-                  starColor="#03a87c"
-                  emptyStarColor="#ccc"
-                  onStarClick={onStarClick}
-                />
-              </span>
-              <p>{averageRate}</p>
-            </React.Fragment>
-          )}
         </div>
       </div>
     </div>
 
-    <div className="col m2 right">
+    <div className="col s2 m2 right">
       <div className="m-t--15">
         {getCurrentUser()
           && user.username === getCurrentUser().username

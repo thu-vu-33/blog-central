@@ -21,12 +21,12 @@
     &:active {
       outline: none;
     }
-
-    & .icon {
-      margin-left: 10px;
-    }
   }
 }
 .relative {
   position: relative;
+}
+
+header {
+  margin: 0 !important;
 }

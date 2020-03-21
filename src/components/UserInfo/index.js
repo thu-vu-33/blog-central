@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import M from 'materialize-css';
 import capitalize from '../../utils/capitalize';
+import Avatar from "react-avatar";
 
 class UserInfo extends React.Component {
   componentDidMount() {
@@ -10,6 +11,9 @@ class UserInfo extends React.Component {
     } = this.props;
     const elems = document.querySelectorAll('.dropdown-trigger');
     M.Dropdown.init(elems, { closeOnClick: false });
+
+    const textNeedCount = document.querySelectorAll('textarea#textarea');
+    M.CharacterCounter.init(textNeedCount)
 
     const chip = document.querySelectorAll('.chips');
     M.Chips.init(chip, {
@@ -26,13 +30,20 @@ class UserInfo extends React.Component {
 
   render() {
     const {
-      onPublish, publishing, save, user,
+      onPublish, publishing, save, user, getDescription,
     } = this.props;
+    
 
     return (
       <div className="row p-t--20 p-b--20">
         <div className="col s6 m1">
-          <img src={user.image} alt="nn" className="responsive-img circle" />
+          <Avatar
+            name={user.username}
+            size="40"
+            textSizeRatio="1.75"
+            className={`responsive-img circle avatar--small`}
+            src={user.image}
+          />
         </div>
         <div className="col s12 m9">
           <p className={!user.bio && 'm-t--15'}>{user.username && capitalize(user.username)}</p>
@@ -54,15 +65,24 @@ class UserInfo extends React.Component {
             </button>
 
             <div id="publish" className="publish dropdown-content card">
-              <h6>Ready to publish your awesome article?</h6>
-              <p className="p-t--15">Add tags to make it easier for readers to find your article</p>
+              <h6>Ready to publish?</h6>
+              <p className="">Add tags to make it easier for readers to find your article</p>
               <div className="chips chips-placeholder" />
 
-              <div className="divider" />
-
-              <p className="p-t--15 p-b--25">
-                Tip: add a high resolution image to your story to capture people’s interest
+              <p>
+                Add a brief description to capture people’s interest
               </p>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea
+                    id="textarea"
+                    class="materialize-textarea"
+                    data-length="100"
+                    onChange={getDescription}
+                  />
+                  <label for="textarea">Decription</label>
+                </div>
+              </div>
               <button
                 type="submit"
                 className="waves-effect waves-light btn-flat btn-flat--primary right"

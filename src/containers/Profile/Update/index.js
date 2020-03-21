@@ -8,14 +8,15 @@ import validateInput from '../../../utils/validateInput';
 import uploader from '../../../utils/uploader';
 import ProfileInput from '../../../components/ProfileInput';
 import Header from '../../../components/Header';
+import Avatar from "react-avatar";
+import getCurrentUser from '../../../utils/auth';
 
 class UpdateProfile extends Component {
   state = {
     profile: {
       username: '',
       bio: '',
-      image:
-        'https://t3.ftcdn.net/jpg/01/83/55/76/500_F_183557656_DRcvOesmfDl5BIyhPKrcWANFKy2964i9.jpg',
+      image: '',
     },
     validation: {},
     fileInput: React.createRef(),
@@ -23,7 +24,7 @@ class UpdateProfile extends Component {
   };
 
   componentDidMount() {
-    const { profile } = this.props.profile;
+    const profile = getCurrentUser()
     let data;
     if (profile) {
       data = JSON.parse(JSON.stringify(profile));
@@ -111,18 +112,18 @@ class UpdateProfile extends Component {
     return (
       <div>
         <Header {...this.props} />
-        <div className="container container--medium">
+        <div className="container">
           {success && this.toaster()}
           {errors && this.errorToaster(error.errors.username[0])}
           {/* Main */}
           <div className="row m-t--20">
             {/* User Profile */}
-            <div className="row p-t--20 p-b--20">
-              <div className="col s12 m9">
+            <div className="row p-t--20 p-b--20 edit-profile">
+              <div className="col m8 s12 profile-form">
                 <div className="m-b--15">
                   <ProfileInput
                     type="text"
-                    classValue="input-edit input-edit--large"
+                    classValue="input-edit"
                     value={this.state.profile.username}
                     name="username"
                     onChange={this.handleChange}
@@ -131,7 +132,7 @@ class UpdateProfile extends Component {
                   />
                 </div>
 
-                <div className="m-b--15 p-r--100">
+                <div className="m-b--15">
                   <ProfileInput
                     type="text"
                     classValue="input-edit input-edit--small"
@@ -154,16 +155,16 @@ class UpdateProfile extends Component {
                   </button>
                 </div>
               </div>
-              <div className="col s12 m3">
+              <div className="col m4 s12 profile-image">
                 <div className="edit-hover">
+                <Avatar
+                  name={this.state.profile.username}
+                  size="100"
+                  textSizeRatio="1.75"
+                  className={`responsive-img circle avatar--small`}
+                  src={this.state.profile.image}
+                />
                   <label htmlFor="image">
-                    <img
-                      className={`circle avatar--profile image ${
-                        this.state.uploaded ? 'image-loading' : ''
-                      }`}
-                      src={this.state.profile.image}
-                      alt={this.state.profile.username}
-                    />
                     <div className="toggle">
                       <div className={this.state.uploaded ? 'toggle-loading' : 'toggle-text'}>
                         {this.state.uploaded && `${this.state.uploaded}%`}

@@ -26,6 +26,7 @@ const updateUser = (data, history) => (dispatch) => {
     authenticated: true,
   })
     .then((res) => {
+      localStorage.setItem('user', JSON.stringify(res));
       dispatch(editProfileSuccess(res));
       dispatch({ type: CLEAR_STORE });
       history.push(`/profile/${res.user.username}`);

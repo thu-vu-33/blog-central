@@ -35,6 +35,10 @@ header {
   }
 }
 
+.network .row {
+  margin: 0;
+}
+
 .trending {
   &__article {
     display: flex;
@@ -128,11 +132,12 @@ header {
   }
 
   &__preview {
-    height: 200px !important;
+    height: 100px !important;
     width: auto;
 
     &--title {
       font-size: 25px;
+      margin-top: 5px;
       margin-bottom: 5px;
     }
 
@@ -210,6 +215,7 @@ header {
   &__panel {
     display: flex;
     width: 100%;
+    line-height: 15px;
     justify-content: space-between !important;
   }
 
@@ -256,13 +262,15 @@ header {
 
 .preview {
   border-bottom: 1px solid #ccc;
-  margin-bottom: 40px;
+  .author {
+    margin-bottom: 0;
+  }
 }
 
 .publish {
   position: absolute;
   top: 150px !important;
-  width: 300px !important;
+  width: 400px !important;
   border-radius: 1.5%;
   line-height: 25px;
   color: #2f2f2f;
@@ -345,6 +353,10 @@ h1 span {
 
   h3 span{
     font-size: 1.5rem !important;
+  }
+
+  .dante-menu-button .dante-icon {
+    padding: 3px !important;
   }
 
   .DraftEditor-root {
