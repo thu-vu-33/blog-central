@@ -25,6 +25,7 @@ export default class Editor extends Component {
       article: {
         ...this.state.article,
         body: this.props.state,
+        description: '',
         tags: [],
       },
     });
@@ -51,6 +52,13 @@ export default class Editor extends Component {
       tags: [...this.state.tags, d.childNodes[0].nodeValue],
     });
   };
+  getDescription = (event) => {
+    this.setState({
+        description: event.target.value
+    });
+    console.log(this.state.description);
+    
+  };
 
   removeTag = (_e, d) => {
     this.setState({
@@ -68,7 +76,7 @@ export default class Editor extends Component {
         article: {
           body: JSON.stringify(this.state.editorState),
           title,
-          description: title,
+          description: this.state.description,
           tagList: this.state.tags,
         },
       };
@@ -80,7 +88,7 @@ export default class Editor extends Component {
       article: {
         body: JSON.stringify(state.editorContent),
         title,
-        description: title,
+        description: this.state.description,
         tagList: this.state.tags,
       },
     };
@@ -92,6 +100,7 @@ export default class Editor extends Component {
   handlePublish = () => {
     const { postArticle, history } = this.props;
     const article = JSON.parse(localStorage.getItem('article'));
+    article.article.description = this.state.description;
     article.article.tagList = this.state.tags;
     postArticle(article, history);
   };
@@ -124,6 +133,7 @@ export default class Editor extends Component {
           publishing={publishing}
           save={this.state.saving}
           user={user}
+          getDescription={this.getDescription}
           getTags={this.getTags}
           removeTag={this.removeTag}
           tags={this.state.tags}

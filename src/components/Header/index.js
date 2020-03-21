@@ -7,6 +7,7 @@ import M from 'materialize-css';
 
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
+import account from '../../assets/icons/account.svg'
 import InlineLoader from '../InlineLoader';
 
 
@@ -25,7 +26,9 @@ class Header extends React.Component {
       { user && (
         <React.Fragment>
           <a className="dropdown-trigger black-text" href="!#" data-target="profile">
-          <i className="icon material-icons">person</i>
+          <div>
+            <img src={account} alt="" className="icon" />
+          </div>
           </a>
           <ul id="profile" className="dropdown-content  dropdown-content--nav">
             <li>

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import likes from '../../assets/icons/thumbs-up.svg';
 import ROUTES from '../../utils/routes';
 
 
 const Articles = ({ article}) => {
   const {
-    preview, image, title, slug, average_rating, created_at,
+    preview, image, title, slug, created_at, likes_count
   } = article;
   const {username} = article.author
-  console.log(article);
   
 
   return (
@@ -39,8 +39,8 @@ const Articles = ({ article}) => {
               &nbsp;&nbsp;&nbsp;
               {
                 <React.Fragment>
-                  <span> &#9733;&nbsp; </span>
-                  <span>{average_rating ? average_rating : "0"}</span>
+                  <img src={likes} alt="" /> &nbsp;
+                  <span>{likes_count ? likes_count : "0"}</span>
                 </React.Fragment>
               }
             </p>

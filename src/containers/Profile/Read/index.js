@@ -59,7 +59,7 @@ export class ReadProfile extends Component {
       <React.Fragment>
         <Header loading={loading || isFollowing} />
         {/* Main */}
-        <div className="container container--medium">
+        <div className="container">
           {data && (
             <React.Fragment>
               <div className="row m-t--20">
@@ -75,7 +75,7 @@ export class ReadProfile extends Component {
               <div className="row">
                 <div className="col s12 data">
                   <ul className="tabs">
-                    <li className="tab col s3">
+                    <li className="tab">
                       <a
                         className="black-text"
                         href="#latest"
@@ -84,7 +84,7 @@ export class ReadProfile extends Component {
                         Profile
                       </a>
                     </li>
-                    <li className="tab col s3">
+                    <li className="tab">
                       <a
                         className="black-text"
                         href="#bookmarks"
@@ -93,7 +93,7 @@ export class ReadProfile extends Component {
                         Favorites
                       </a>
                     </li>
-                    <li className="tab col s3">
+                    <li className="tab">
                       <a
                         className="black-text"
                         href="#following"
@@ -105,7 +105,7 @@ export class ReadProfile extends Component {
                         Following
                       </a>
                     </li>
-                    <li className="tab col s3">
+                    <li className="tab">
                       <a
                         className="black-text"
                         href="#followers"

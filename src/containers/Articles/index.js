@@ -147,7 +147,6 @@ class Articles extends Component {
               onChange={this.handleChange}
             />
           </form>
-          <p className="flow-text m-b--30">Stories</p>
           {(isFetching || !success) ? this.renderLoader() : this.renderArticles()}
         </div>
       </div>
