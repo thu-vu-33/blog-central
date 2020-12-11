@@ -7,7 +7,6 @@ import Header from '../../components/Header';
 import fetchArticlesAction from './actions';
 import ArticleCard from '../../components/ArticleCard';
 
-import ArticleCardPlaceHolder from '../../components/Placehoders/ArticleCard';
 import ArticleCardHolderReverse from '../../components/Placehoders/ArticleCardReverse';
 import featured from '../../utils/featured';
 import Sidebar from '../Sidebar';
@@ -28,10 +27,8 @@ class Home extends Component {
 
   renderPlaceholder = () => {
     const loaders = [];
-    for (let index = 0; index < 4; index += 1) {
-      const loader = index % 2 === 0 ? (
-        <ArticleCardPlaceHolder className="card horizontal" key={index} />
-      ) : (
+    for (let index = 0; index < 5; index += 1) {
+      const loader = (
         <ArticleCardHolderReverse className="card horizontal" key={index} />
       );
       loaders.push(loader);

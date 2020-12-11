@@ -5,7 +5,7 @@ import ContentLoader from 'react-content-loader';
 const ArticleLoader = props => (
   <ContentLoader
     height={160}
-    width={400}
+    width={'auto'}
     speed={1.5}
     primarycolor="#dfdfdf"
     secondarycolor="#ffffff"

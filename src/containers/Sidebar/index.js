@@ -43,7 +43,14 @@ class SideBar extends Component {
   }
 
   renderTrendingPlaceholder = () => {
-    return <TrendingPlaceHolder />;
+    const loaders = [];
+    for (let index = 0; index < 5; index += 1) {
+      const loader = (
+        <TrendingPlaceHolder />
+        );
+        loaders.push(loader);
+      }
+      return loaders;
   }
 
   render() {
@@ -61,12 +68,12 @@ class SideBar extends Component {
         {isFetching || !success ? this.renderTrendingPlaceholder() : this.renderArticles() }
         <div className="divider" />
 
-        <div className="trending p-b--10">
+        {/* <div className="trending p-b--10">
           <div className="trending__article">
             <h2 className="ui-h2">Recommended for you: </h2>
           </div>
         </div>
-        <div className="divider" />
+        <div className="divider" /> */}
       </aside>
     );
   }
