@@ -4,7 +4,7 @@ import Articles from '.';
 import configStore from '../../store';
 
 describe('<Articles />', () => {
-  it('renders without crushing', () => {
+  it('renders without crashing', () => {
     const wrapper = shallow(
       <Articles
         store={configStore()}
