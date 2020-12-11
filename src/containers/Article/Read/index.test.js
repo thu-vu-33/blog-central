@@ -4,7 +4,7 @@ import Read from '.';
 import configStore from '../../../store';
 
 describe('<Read />', () => {
-  it('renders without crushing', () => {
+  it('renders without crashing', () => {
     const wrapper = shallow(
       <Read
         store={configStore()}

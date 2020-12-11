@@ -4,7 +4,7 @@ import SideBar from '.';
 import configStore from '../../store';
 
 describe('<SideBar />', () => {
-  it('renders without crushing', () => {
+  it('renders without crashing', () => {
     const wrapper = shallow(
       <SideBar
         store={configStore()}
