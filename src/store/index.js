@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import rootReducer from '../rootReducer';
 
 const configStore = () => {
-  const middlewares = [thunk, logger];
+  const middlewares = process.env.NODE_ENV === 'development' ? [thunk, logger] : [thunk];
   return createStore(rootReducer, {}, composeWithDevTools(applyMiddleware(...middlewares)));
 };
 
