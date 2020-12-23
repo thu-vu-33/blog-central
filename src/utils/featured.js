@@ -1,6 +1,4 @@
 const filterFeatured = (article) => {
-  console.log(article);
-  
     const {
       body, title, slug, average_rating, likes_count, created_at, author, updated_at,
     } = article;
