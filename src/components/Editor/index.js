@@ -56,7 +56,6 @@ export default class Editor extends Component {
     this.setState({
         description: event.target.value
     });
-    console.log(this.state.description);
     
   };
 
