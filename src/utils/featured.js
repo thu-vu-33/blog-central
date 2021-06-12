@@ -13,7 +13,7 @@ const filterFeatured = (article) => {
       return false;
     }
     const resp = blocks.find(x => (x.type === 'image'));
-    const image = resp ? resp.data.url : null;
+    const image = resp ? resp.data.url : "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
     if (!image) {
       return false;
     }

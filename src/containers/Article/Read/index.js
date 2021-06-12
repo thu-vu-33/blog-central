@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import M from 'materialize-css';
+import ReactAudioPlayer from 'react-audio-player';
 
 import thumbsUp from '../../../assets/icons/thumbsUp.svg';
 import thumbsDown from '../../../assets/icons/thumbsDown.svg';
@@ -21,6 +22,7 @@ import getCurrentUser from '../../../utils/auth';
 import readTime from '../../../utils/readtime';
 import NewComment from '../../Comments/Create';
 import ReadComments from '../../Comments/Read';
+import Tiptap from './Tiptap.js'
 
 const user = getCurrentUser();
 
@@ -123,8 +125,8 @@ renderComments = () => {
     let readtime;
     if (payload.article) {
       try {
-        data = JSON.parse(payload.article.body);
-        readtime = readTime(data);
+        data = payload.article.body;
+        // readtime = readTime(data);
       } catch (e) {
         return <NotFound />;
       }
@@ -149,7 +151,7 @@ renderComments = () => {
                     user={{ ...payload.article.author }}
                     date={payload.article.created_at}
                     slug={payload.article.slug}
-                    readtime={readtime}
+                    // readtime={readtime}
                     averageRate={
                       payload.article.average_rating
                       ? parseFloat(payload.article.average_rating)
@@ -157,7 +159,9 @@ renderComments = () => {
                     }
                     onStarClick={this.onStarClick}
                   />
-                  <Dante read_only content={data} />
+                  {/* <Dante read_only content={data} /> */}
+                  <ReactAudioPlayer src="https://dl.dropboxusercontent.com/s/zxbf0yz8vga0qug/Test%203%20Part%201.mp3?dl=0" autoPlay controls />
+                  <Tiptap content={data}/>
                   {this.renderComments()}
                   </div>
                 <div className="col l1 s1 hide-on-med-and-down">
