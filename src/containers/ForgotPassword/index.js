@@ -79,7 +79,7 @@ class ForgotPassword extends Component {
           <div className="col m4 s12 offset-m4 auth">
             <div className="card card--auth p-b--40">
               <div className="card-content">
-                <span className="card-title center-align text-primary brand">Blog Central</span>
+                <span className="card-title center-align text-primary brand">Tieng Anh Song Ngu</span>
                 <h6 className="center">Reset password</h6>
                 <form onSubmit={this.handleSubmit}>
                   {this.renderInput('email', failure, errors, this.state.email)}

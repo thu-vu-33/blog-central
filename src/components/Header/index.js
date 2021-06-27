@@ -58,6 +58,50 @@ class Header extends React.Component {
 
   renderIcons = user => (
     <React.Fragment>
+            <li>
+      <NavLink to={ROUTES.magazines} className="black-text" id="magazine">
+          <div>
+            <p>Magazines</p>
+          </div>
+        </NavLink>
+      </li>
+
+<li>
+  <NavLink to={ROUTES.books} className="black-text" id="books">
+    <div>
+      <p>Books</p>
+    </div>
+  </NavLink>
+</li>
+      
+            <li>
+      <NavLink to={ROUTES.videos} className="black-text" id="videos">
+          <div>
+           
+            <p>Videos</p>
+          </div>
+        </NavLink>
+      </li>
+
+      <li>
+      <NavLink to={ROUTES.blogs} className="black-text" id="blogs">
+          <div>
+           
+            <p>Blogs</p>
+          </div>
+        </NavLink>
+      </li>
+
+      <li>
+      <NavLink to={ROUTES.guide} className="black-text" id="guide">
+          <div>
+           
+            <p>Guide</p>
+          </div>
+        </NavLink>
+      </li>
+
+
       <li>
         <NavLink to={ROUTES.articles} className="black-text" id="search">
           <div>
@@ -98,7 +142,7 @@ class Header extends React.Component {
           <nav className="white">
             <div className="nav-wrapper maxWidth1032">
               <NavLink to="/" className="nav-brand-logo black-text hide-on-small-only">
-                  Blog Central
+                  Tieng Anh Song Ngu
               </NavLink>
               <NavLink to="/" className="nav-brand-logo black-text hide-on-med-and-up">
                   Blog C.

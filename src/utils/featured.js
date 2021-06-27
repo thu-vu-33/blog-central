@@ -1,30 +1,12 @@
 const filterFeatured = (article) => {
     const {
-      body, title, slug, average_rating, likes_count, created_at, author, updated_at,
+      body, title, slug, average_rating, _image, _preview, likes_count, created_at, author, updated_at,
     } = article;
-    let b;
-    try {
-      b = JSON.parse(body);
-    } catch (e) {
-      return false;
-    }
-    const { blocks } = b;
-    if (!blocks) {
-      return false;
-    }
-    const resp = blocks.find(x => (x.type === 'image'));
-    const image = resp ? resp.data.url : "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
-    if (!image) {
-      return false;
-    }
-    const preview = blocks.find(x => !x[0] && x.text && x.text.split('').length > 200 && x.type === 'unstyled');
-    if (!preview) {
-      return false;
-    }
-  
+ 
+    let preview =  _preview || "Preview article"
+    let image = _image || "https://www.google.com/logos/doodles/2021/krzysztof-kieslowskis-80th-birthday-6753651837109260.5-l.png"
     return {
-      preview: (
-        preview.text.substring(0, 1).toUpperCase() + preview.text.substring(1)).substring(0, 100),
+      preview ,
       image,
       title,
       slug,

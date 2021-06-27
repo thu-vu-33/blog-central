@@ -55,7 +55,7 @@ class Signin extends Component {
         <div className="col m4 s12 offset-m4 auth">
           <div className="card card--auth">
             <div className="card-content">
-              <span className="card-title center-align nav-brand-logo text-primary">Blog Central</span>
+              <span className="card-title center-align nav-brand-logo text-primary">Tieng Anh Song Ngu</span>
               <Errors
                 name="error"
                 errors={errors}

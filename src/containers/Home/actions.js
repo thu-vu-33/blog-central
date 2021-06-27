@@ -46,11 +46,11 @@ export const searchRequest = () => ({
 
 export const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
 
-const fetchArticlesAction = (count, page, search) => (dispatch) => {
+const fetchArticlesAction = (count=30, page=0, search="_", type="home_page") => (dispatch) => {
   dispatch(articlesFetch());
   return api({
     method: 'GET',
-    endpoint: `/articles?${limit(count, page - 1)}&${search && `search=${search}`}`,
+    endpoint: `/${type}?${limit(count, page - 1)}&${search && `search=${search}`}`,
   })
     .then((res) => {
       if (search) {

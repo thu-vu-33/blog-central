@@ -86,7 +86,7 @@ class ResetPassword extends Component {
           <div className="card card--auth p-b--40">
             <div className="card-content">
               <span className="card-title center-align text-primary  nav-brand-logo m-b--30 m-t--15">
-                Blog Central
+                Tieng Anh Song Ngu
               </span>
               <form onSubmit={this.handleSubmit}>
                 {this.renderInput('new_password', failure, errors, this.state.new_password, 'New Password', 'password')}

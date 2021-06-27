@@ -29,24 +29,25 @@ class Articles extends Component {
     const { location } = this.props;
     const page = new URLSearchParams(location.search).get('page');
     const search = new URLSearchParams(location.search).get('search');
+
     if (page) {
       this.setState({ activePage: page });
     }
     this.setState({ search });
     this.props.fetchArticle(
-      config.ARTICLES_PER_PAGE, page || this.state.activePage, this.state.search,
+      config.ARTICLES_PER_PAGE, page || this.state.activePage, this.state.search, this.props.type
     );
   }
 
-  fetchFunc = (search) => {
+  fetchFunc = (search, type) => {
     this.props.fetchArticle(
-      config.ARTICLES_PER_PAGE, this.state.activePage, search,
+      config.ARTICLES_PER_PAGE, this.state.activePage, search, type
     );
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.fetchFunc(e.target.value);
+    this.fetchFunc(e.target.value, this.props.type);
   }
 
   handleChange = (e) => {
@@ -55,7 +56,7 @@ class Articles extends Component {
     e.persist();
     if (this.timeout) clearTimeout(this.timeout);
     this.timeout = setTimeout(() => {
-      this.fetchFunc(e.target.value);
+      this.fetchFunc(e.target.value, this.props.type);
     }, 500);
   }
 
@@ -83,17 +84,10 @@ class Articles extends Component {
   renderArticles = () => {
     const { results } = this.props.articles.payload;
     const articles = results.map((data) => {
-      let b;
-      try {
-        b = JSON.parse(data.body);
-      } catch (e) {
-        return false;
-      }
-      const { blocks } = b;
-      if (!blocks) return false;
-      const image = extractImage(blocks);
-      const p = extractDescription(blocks);
-      const preview = p ? p.text : '';
+      const image = data._image || "https://www.google.com/logos/doodles/2021/krzysztof-kieslowskis-80th-birthday-6753651837109260.5-l.png";
+      const preview = data._preview || "Preview article";
+      const readtime = data._readtime || 5;
+
       return (
         <Article
           title={data.title}
@@ -103,7 +97,7 @@ class Articles extends Component {
           image={image}
           author={data.author}
           key={data.slug}
-          readtime={readTime(b)}
+          readtime={readtime}
           likesCount={data.likes_count}
         />
       );
